@@ -1,8 +1,3 @@
-# Asset Studio
-Explore powerful feature-rich Asset Studio app designed for developers.
-
-this project is still under development.
-
 ### License
 ```
 Copyright 2024 Zyron
@@ -19,4 +14,3 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
- 
