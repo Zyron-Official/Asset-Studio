@@ -1,0 +1,8 @@
+<resources>
+    <array name="simple_items">
+        <item>Filled</item>
+        <item>Rounded</item>
+        <item>Sharp</item>
+        <item>Outlined</item>
+    </array>
+</resources>

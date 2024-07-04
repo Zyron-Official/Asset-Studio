@@ -1,0 +1,119 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    
+    <style name="Theme.AssetStudio.Light" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Color Theme - Stock Colors - Asset Studio -->
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/md_theme_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/md_theme_tertiary</item>
+        <item name="colorOnTertiary">@color/md_theme_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/md_theme_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/md_theme_onTertiaryContainer</item>
+        <item name="colorError">@color/md_theme_error</item>
+        <item name="colorOnError">@color/md_theme_onError</item>
+        <item name="colorErrorContainer">@color/md_theme_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/md_theme_onErrorContainer</item>
+        <item name="android:colorBackground">@color/md_theme_background</item>
+        <item name="colorOnBackground">@color/md_theme_onBackground</item>
+        <item name="colorSurface">@color/md_theme_surface</item>
+        <item name="colorOnSurface">@color/md_theme_onSurface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_onSurfaceVariant</item>
+        <item name="colorOutline">@color/md_theme_outline</item>
+        <item name="colorOutlineVariant">@color/md_theme_outlineVariant</item>
+        <item name="colorSurfaceInverse">@color/md_theme_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/md_theme_inverseOnSurface</item>
+        <item name="colorPrimaryInverse">@color/md_theme_inversePrimary</item>
+     
+        <!-- Color Theme - Custom Colors - Asset Studio -->
+        <item name="colorDrawerHeaderStrip">@color/colorDrawerHeaderStrip</item>
+        <item name="colorTopAppBar">@color/colorTopAppBar</item>
+        <item name="colorBottomAppBar">@color/colorBottomAppBar</item>
+        <item name="colorStatusBar">@color/colorStatusBar</item>
+        <item name="colorNavigationBar">@color/colorNavigationBar</item>
+        <item name="colorPopupMenu">@color/colorPopupMenu</item>
+        <item name="colorAlertDialog">@color/colorAlertDialog</item>
+        <item name="colorBottomSheet">@color/colorBottomSheet</item>
+        <item name="colorNavigationDrawer">@color/colorNavigationDrawer</item>
+        <item name="colorNavigationRail">@color/colorNavigationRail</item>
+        <item name="colorRipple">@color/colorRipple</item>
+        
+    </style>
+
+    <!-- Theme - AppTheme - Asset Studio -->
+    <style name="AppTheme" parent="Theme.AssetStudio.Light">
+        
+        <!-- Theme - StatusBar & NavigationBar - Asset Studio -->
+        <item name="android:statusBarColor">?@attr/colorStatusBar</item>
+        <item name="android:navigationBarColor">?@attr/colorNavigationBar</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+        <!-- Theme - Material Components - Asset Studio -->        
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
+        <item name="navigationViewStyle">@style/Widget.App.NavigationView</item>
+        
+        <item name="fontFamily">@font/font_default</item>
+        
+        <!-- Attributes - Typography - Asset Studio -->
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.App.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.App.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.App.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.App.HeadLineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.App.HeadLineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.App.HeadLineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.App.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.App.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.App.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.App.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.App.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.App.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.App.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.App.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.App.LabelSmall</item>
+
+    </style>
+
+    <!-- Theme - MaterialAlertDialog - Asset Studio -->    
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+            <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
+            <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.App.Title.Text</item>
+            <item name="materialAlertDialogBodyTextStyle">@style/MaterialAlertDialog.App.Body.Text</item>
+            <item name="buttonBarPositiveButtonStyle">@style/Widget.App.Button</item>
+            <item name="buttonBarNegativeButtonStyle">@style/Widget.App.Button</item>
+        </style>
+    
+    <!-- Theme - BottomSheetDialog - Asset Studio -->        
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetDialog.App</item>
+    </style>
+    
+    <style name="Widget.App.NavigationView" parent="Widget.Material3.NavigationView">
+        <item name="backgroundTint">?attr/colorSurface</item>         
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.NavigationView</item>
+    </style>
+    
+    <!-- Theme - Image Button - Asset Studio -->
+    <style name="ImageButtonStyle">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:padding">28dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+    
+    <!-- Theme - ImageView Button - Asset Studio -->
+    <style name="ImageViewButtonStyle">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+    
+</resources>

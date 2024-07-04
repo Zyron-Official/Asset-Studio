@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:shownIn="navigation_view">
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/GroupA">
+        <item
+            android:id="@+id/navigation_home"
+            android:title="Home"
+            android:checkable="true"
+            android:checked="true"
+            android:icon="@drawable/ic_home" />
+        <item
+            android:id="@+id/navigation_shapeshifter"
+            android:title="S-Shifter"
+            android:checkable="false"
+            android:icon="@drawable/ic_animation" />
+        <item
+            android:id="@+id/navigation_preferences"
+            android:title="Preferences"
+            android:checkable="false"
+            android:icon="@drawable/ic_preferences" />
+        <item
+            android:id="@+id/navigation_xmldesigner"
+            android:title="XML Designer"
+            android:checkable="false"
+            android:icon="@drawable/ic_shape" />
+        
+    </group>
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/GroupB">
+        <item
+            android:id="@+id/navigation_faq"
+            android:title="FAQs"
+            android:checkable="false"
+            android:icon="@drawable/ic_faq_filled" />
+        <item
+            android:id="@+id/navigation_updates"
+            android:title="For Beta updates"
+            android:checkable="false"
+            android:icon="@drawable/ic_github" />
+        <item
+            android:id="@+id/navigation_share"
+            android:title="Share with Others"
+            android:checkable="false"
+            android:icon="@drawable/ic_share" />
+    </group>
+</menu>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="0dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_height="136dp"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_android"
+        android:id="@+id/banner" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_height="64dp"
+        android:layout_width="64dp"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Small"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        app:srcCompat="@mipmap/ic_launcher_foreground"
+        android:id="@+id/icon" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icon"
+        app:layout_constraintBottom_toTopOf="@id/description"
+        android:layout_marginStart="16dp"
+        android:id="@+id/title"
+        android:text="@string/app_name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintBottom_toTopOf="@id/ide_version"
+        android:layout_marginStart="16dp"
+        android:id="@+id/description"
+        android:text="Explore powerful, feature-rich Asset Studio app designed for devs, used in Falcon Studio."
+        android:layoutDirection="ltr" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:alpha="0.7"
+        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        android:id="@+id/ide_version"
+        android:text="Version | 0.1.3-alpha" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,42 @@
+<resources>
+    <color name="md_theme_primary">#1A1A1A</color>
+    <color name="md_theme_onPrimary">#FAFAFA</color>
+    <color name="md_theme_primaryContainer">#1A1A1A</color>
+    <color name="md_theme_onPrimaryContainer">#FAFAFA</color>
+    <color name="md_theme_secondary">#1A1A1A</color>
+    <color name="md_theme_onSecondary">#FAFAFA</color>
+    <color name="md_theme_secondaryContainer">#5AFF9B</color>
+    <color name="md_theme_onSecondaryContainer">#001E0A</color>
+    <color name="md_theme_tertiary">#A0C3FA</color>
+    <color name="md_theme_onTertiary">#1A1A1A</color>
+    <color name="md_theme_tertiaryContainer">#A0C3FA</color>
+    <color name="md_theme_onTertiaryContainer">#1A1A1A</color>
+    <color name="md_theme_error">#BA1A1A</color>
+    <color name="md_theme_onError">#FFFFFF</color>
+    <color name="md_theme_errorContainer">#FFDAD6</color>
+    <color name="md_theme_onErrorContainer">#410002</color>
+    <color name="md_theme_background">#F7F7F7</color>
+    <color name="md_theme_onBackground">#1E1E1E</color>
+    <color name="md_theme_surface">#FFFFFF</color>
+    <color name="md_theme_onSurface">#414141</color>
+    <color name="md_theme_surfaceVariant">#E6E6E6</color>
+    <color name="md_theme_onSurfaceVariant">#414141</color>
+    <color name="md_theme_outline">#D6D6D6</color>
+    <color name="md_theme_outlineVariant">#D6D6D6</color>
+    <color name="md_theme_scrim">#000000</color>
+    <color name="md_theme_inverseSurface">#414141</color>
+    <color name="md_theme_inverseOnSurface">#D6D6D6</color>
+    <color name="md_theme_inversePrimary">#C8C6C5</color>
+    
+    <color name="colorDrawerHeaderStrip">#2AFFFFFF</color>
+    <color name="colorTopAppBar">#FFFFFF</color>
+    <color name="colorBottomAppBar">#FFFFFF</color>
+    <color name="colorStatusBar">#FFFFFF</color>
+    <color name="colorNavigationBar">#FFFFFF</color>
+    <color name="colorPopupMenu">#E6E6E6</color>
+    <color name="colorAlertDialog">#FEFEFE</color>
+    <color name="colorBottomSheet">#FEFEFE</color>
+    <color name="colorNavigationDrawer">#FEFEFE</color>
+    <color name="colorNavigationRail">#E6E6E6</color>
+    <color name="colorRipple">#E5E5E5</color>
+</resources>

@@ -1,0 +1,47 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="960"
+    android:viewportHeight="960"
+    android:width="24dp"
+    android:height="24dp">
+    <group
+        android:translateX="-0"
+        android:translateY="960">
+
+        <path
+            android:pathData="M240 -160q-33 0 -56.5 -23.5T160 -240q0 -33 23.5 -56.5T240 -320q33 0 56.5 23.5T320 -240q0 33 -23.5 56.5T240 -160Z"
+            android:fillColor="#1976D2" />
+
+        <path
+            android:pathData="M480 -160q-33 0 -56.5 -23.5T400 -240q0 -33 23.5 -56.5T480 -320q33 0 56.5 23.5T560 -240q0 33 -23.5 56.5T480 -160Z"
+            android:fillColor="#80868B" />
+
+        <path
+            android:pathData="M720 -160q-33 0 -56.5 -23.5T640 -240q0 -33 23.5 -56.5T720 -320q33 0 56.5 23.5T800 -240q0 33 -23.5 56.5T720 -160Z"
+            android:fillColor="#0295DE" />
+
+        <path
+            android:pathData="M240 -400q-33 0 -56.5 -23.5T160 -480q0 -33 23.5 -56.5T240 -560q33 0 56.5 23.5T320 -480q0 33 -23.5 56.5T240 -400Z"
+            android:fillColor="#E91E63" />
+
+        <path
+            android:pathData="M480 -400q-33 0 -56.5 -23.5T400 -480q0 -33 23.5 -56.5T480 -560q33 0 56.5 23.5T560 -480q0 33 -23.5 56.5T480 -400Z"
+            android:fillColor="#4F64E0" />
+
+        <path
+            android:pathData="M720 -400q-33 0 -56.5 -23.5T640 -480q0 -33 23.5 -56.5T720 -560q33 0 56.5 23.5T800 -480q0 33 -23.5 56.5T720 -400Z"
+            android:fillColor="#EB6A00" />
+
+        <path
+            android:pathData="M240 -640q-33 0 -56.5 -23.5T160 -720q0 -33 23.5 -56.5T240 -800q33 0 56.5 23.5T320 -720q0 33 -23.5 56.5T240 -640Z"
+            android:fillColor="#33A351" />
+
+        <path
+            android:pathData="M480 -640q-33 0 -56.5 -23.5T400 -720q0 -33 23.5 -56.5T480 -800q33 0 56.5 23.5T560 -720q0 33 -23.5 56.5T480 -640Z"
+            android:fillColor="#FF0000" />
+
+        <path
+            android:pathData="M720 -640q-33 0 -56.5 -23.5T640 -720q0 -33 23.5 -56.5T720 -800q33 0 56.5 23.5T800 -720q0 33 -23.5 56.5T720 -640Z"
+            android:fillColor="#EBB000" />
+
+    </group>
+</vector>

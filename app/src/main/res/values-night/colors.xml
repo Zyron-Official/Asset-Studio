@@ -1,0 +1,42 @@
+<resources>
+    <color name="md_theme_primary">#FAFAFA</color>
+    <color name="md_theme_onPrimary">#1A1A1A</color>
+    <color name="md_theme_primaryContainer">#FAFAFA</color>
+    <color name="md_theme_onPrimaryContainer">#1A1A1A</color>
+    <color name="md_theme_secondary">#FAFAFA</color>
+    <color name="md_theme_onSecondary">#1A1A1A</color>
+    <color name="md_theme_secondaryContainer">#005227</color>
+    <color name="md_theme_onSecondaryContainer">#5AFF9D</color>
+    <color name="md_theme_tertiary">#4182F5</color>
+    <color name="md_theme_onTertiary">#FAFAFA</color>
+    <color name="md_theme_tertiaryContainer">#4182F5</color>
+    <color name="md_theme_onTertiaryContainer">#FAFAFA</color>
+    <color name="md_theme_error">#FFB4AB</color>
+    <color name="md_theme_onError">#690005</color>
+    <color name="md_theme_errorContainer">#93000A</color>
+    <color name="md_theme_onErrorContainer">#FFDAD6</color>
+    <color name="md_theme_background">#121212</color>
+    <color name="md_theme_onBackground">#E6E6E6</color>
+    <color name="md_theme_surface">#1A1A1A</color>
+    <color name="md_theme_onSurface">#E6E6E6</color>
+    <color name="md_theme_surfaceVariant">#262626</color>
+    <color name="md_theme_onSurfaceVariant">#E6E6E6</color>
+    <color name="md_theme_outline">#464646</color>
+    <color name="md_theme_outlineVariant">#464646</color>
+    <color name="md_theme_scrim">#000000</color>
+    <color name="md_theme_inverseSurface">#E6E6E6</color>
+    <color name="md_theme_inverseOnSurface">#262626</color>
+    <color name="md_theme_inversePrimary">#5F5E5E</color>
+    
+    <color name="colorDarkDrawerHeaderStrip">#2A000000</color>
+    <color name="colorDarkTopAppBar">#1A1A1A</color>
+    <color name="colorDarkBottomAppBar">#1A1A1A</color>
+    <color name="colorDarkStatusBar">#1A1A1A</color>
+    <color name="colorDarkNavigationBar">#1A1A1A</color>
+    <color name="colorDarkPopupMenu">#262626</color>
+    <color name="colorDarkAlertDialog">#191919</color>
+    <color name="colorDarkBottomSheet">#191919</color>
+    <color name="colorDarkNavigationDrawer">#191919</color>
+    <color name="colorDarkNavigationRail">#262626</color>
+    <color name="colorDarkRipple">#252525</color>
+</resources>

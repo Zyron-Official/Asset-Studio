@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="DrawerHeader">
+        <attr name="widthRatio" format="integer" />
+        <attr name="heightRatio" format="integer" />
+    </declare-styleable>
+    
+    <attr name="colorDrawerHeaderStrip" format="reference|color"/>
+    <attr name="colorPopupMenu" format="reference|color"/>
+    <attr name="colorAlertDialog" format="reference|color"/>
+    <attr name="colorBottomSheetDialog" format="reference|color"/>
+    <attr name="colorBottomAppBar" format="reference|color"/>
+    <attr name="colorTopAppBar" format="reference|color"/>
+    <attr name="colorNavigationRail" format="reference|color"/>
+    <attr name="colorNavigationDrawer" format="reference|color"/>
+    <attr name="colorBottomSheet" format="reference|color"/>
+    <attr name="colorRipple" format="reference|color"/>
+    <attr name="colorStatusBar" format="reference|color"/>
+    <attr name="colorNavigationBar" format="reference|color"/>
+
+</resources>
