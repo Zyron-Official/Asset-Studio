@@ -1,210 +1,179 @@
-package com.zyron.assetstudio;
+package com.zyron.assetstudio
 
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.util.TypedValue;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.widget.Toolbar;
-import static com.zyron.assetstudio.R.string;
+import android.content.*
+import android.graphics.*
+import android.net.*
+import android.os.*
+import android.provider.*
+import androidx.annotation.RequiresApi
+import android.util.*
+import android.view.*
+import android.widget.*
+import androidx.appcompat.app.*
+import androidx.appcompat.widget.Toolbar
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
+import androidx.core.view.*
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationView
+import com.zyron.assetstudio.activities.*
+import com.zyron.assetstudio.asynchronous.StartActivityTask
+import com.zyron.assetstudio.databinding.ActivityMainBinding
+import java.util.concurrent.*
 
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-import com.zyron.assetstudio.R;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.app.ActionBar;
-import android.widget.ImageView;
-import androidx.appcompat.app.AppCompatDelegate;
-import android.widget.ImageButton;
-import android.widget.CompoundButton;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.ViewPropertyAnimatorCompat;
-import androidx.core.view.ViewPropertyAnimatorListener;
-import android.animation.Animator;
-import android.content.res.Configuration;
-import android.view.ViewAnimationUtils;
-import android.content.SharedPreferences;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+class MainActivity : AppCompatActivity() {
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.core.view.MenuItemCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var activityMain: DrawerLayout
+    private lateinit var layoutMain: View
+    private lateinit var navigationView: NavigationView
+    private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+    private lateinit var toolbar: Toolbar
+    private var selectedNavItem = R.id.navigation_home
+    private val executor: ExecutorService = Executors.newSingleThreadExecutor()
 
-import com.zyron.assetstudio.activities.AboutActivity;
-import com.zyron.assetstudio.activities.ShapeShifterActivity;
-import com.zyron.assetstudio.activities.PreferencesActivity;
-import com.zyron.assetstudio.activities.XMLDesignerActivity;
-import com.zyron.assetstudio.activities.FaqActivity;
-import com.zyron.assetstudio.activities.IconLauncherActivity;
-import com.zyron.assetstudio.databinding.ActivityMainBinding;
+    companion object {
+        private var instance: MainActivity? = null
 
-import com.zyron.assetstudio.fragments.PreferencesFragment;
+        @JvmStatic
+        fun getInstance(): MainActivity? {
+            return instance
+        }
 
-import com.google.android.material.navigation.NavigationView;
-import android.content.pm.PackageManager;
-import java.io.File;
-
-public class MainActivity extends AppCompatActivity {
-
-    private ActivityMainBinding binding;
-    private DrawerLayout activityMain;
-    private ConstraintLayout layoutMain;
-    private NavigationView navigationView;
-    private ActionBarDrawerToggle actionBarDrawerToggle;
-    private Toolbar toolbar;
-    private int selectedNavItem = R.id.navigation_home;
-    private static MainActivity instance;
-    private static final float END_SCALE = 0.7f;
-
-    public static MainActivity getInstance() {
-        return instance;
+        private const val END_SCALE = 0.7f
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.layoutMain.toolbar)
 
-        super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        setSupportActionBar(binding.layoutMain.toolbar);
-        
+        activityMain = binding.activityMain
+        navigationView = binding.navigationView
+        toolbar = binding.layoutMain.toolbar
+        layoutMain = findViewById(R.id.layoutMain)
 
-        activityMain = binding.activityMain;
-        navigationView = binding.navigationView;
-        toolbar = binding.layoutMain.toolbar;
-        layoutMain = findViewById(R.id.layoutMain);
+        actionBarDrawerToggle = ActionBarDrawerToggle(this, activityMain, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
 
-    actionBarDrawerToggle =
-        new ActionBarDrawerToggle(
-            this,
-            activityMain,
-            binding.layoutMain.toolbar,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close);
+        navigationDrawer()
+        animateNavigationDrawer()
 
-        navigationDrawer();
-        animateNavigationDrawer();
+        activityMain.addDrawerListener(actionBarDrawerToggle)
+        actionBarDrawerToggle.syncState()
 
-        activityMain.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
-            actionBar.setDisplayHomeAsUpEnabled(true);
+        supportActionBar?.apply {
+            setHomeAsUpIndicator(R.drawable.ic_menu)
+            setDisplayHomeAsUpEnabled(true)
         }
-        
-        final FloatingActionButton fabDraw = findViewById(R.id.fab_draw);
-        binding.layoutMain.fabDraw.setOnClickListener(view -> {
-            Intent intent = new Intent(this, IconLauncherActivity.class);
-            startActivity(intent);
-        });
 
+        findViewById<FloatingActionButton>(R.id.fab_draw).setOnClickListener {
+            executor.execute(StartActivityTask(this))
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if (!hasManageExternalStoragePermission()) {
+                requestManageExternalStoragePermission()
+            }
+        }
     }
 
-    private void navigationDrawer() {
-    navigationView.bringToFront();
-    navigationView.setCheckedItem(R.id.navigation_home);
-    navigationView.setNavigationItemSelectedListener(
-            item -> {
-                int id = item.getItemId();
-                if (id == R.id.navigation_home) {
-                    activityMain.postDelayed(() -> {
-                    activityMain.closeDrawer(GravityCompat.START);
-                    }, 230);
-                } else if (id == R.id.navigation_shapeshifter) {
-                    activityMain.closeDrawer(GravityCompat.START);
-                    activityMain.postDelayed(() -> {
-                    startActivity(new Intent(this, ShapeShifterActivity.class));
-                    }, 230);
-                } else if (id == R.id.navigation_preferences) {
-                    activityMain.closeDrawer(GravityCompat.START);
-                    activityMain.postDelayed(() -> {
-                    startActivity(new Intent(this, PreferencesActivity.class));
-                    }, 230); 
-                } else if (id == R.id.navigation_xmldesigner) {
-                    activityMain.closeDrawer(GravityCompat.START);
-                    activityMain.postDelayed(() -> {
-                    startActivity(new Intent(this, XMLDesignerActivity.class));
-                    }, 230);
-                } else if (id == R.id.navigation_faq) {
-                    activityMain.closeDrawer(GravityCompat.START);
-                    activityMain.postDelayed(() -> {
-                    startActivity(new Intent(this, FaqActivity.class));
-                    }, 230);
-                } else if (id == R.id.navigation_updates) {
-                    openUrl();
-                    activityMain.closeDrawer(GravityCompat.START);
-                } else if (id == R.id.navigation_share) {
-                    shareApp();
-                    activityMain.closeDrawer(GravityCompat.START);
-                }
+    @RequiresApi(Build.VERSION_CODES.R)
+    private fun hasManageExternalStoragePermission(): Boolean {
+        return Environment.isExternalStorageManager()
+    }
 
-                return true;
-            });
-}
-    private void animateNavigationDrawer() {
-    activityMain.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
-        @Override
-        public void onDrawerSlide(View drawerView, float slideOffset) {
-            float diffScaledOffset = slideOffset * (1 - END_SCALE);
-            float offsetScale = 1 - diffScaledOffset;
-
-            layoutMain.setScaleX(offsetScale);
-            layoutMain.setScaleY(offsetScale);
-
-            float xOffset = drawerView.getWidth() * slideOffset;
-            float xOffsetDiff = drawerView.getWidth() * diffScaledOffset / 1.5f;
-            float xTranslation = xOffset - xOffsetDiff;
-            layoutMain.setTranslationX(xTranslation);
-        }
-    });
-}
-
-    @Override
-    public void onBackPressed() {
-        if (activityMain.isDrawerOpen(GravityCompat.START)) {
-            activityMain.closeDrawer(GravityCompat.START);
+    private fun requestManageExternalStoragePermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            try {
+                val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
+                intent.data = Uri.parse("package:" + packageName)
+                startActivity(intent)
+            } catch (e: Exception) {
+                val intent = Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)
+                startActivity(intent)
+            }
         } else {
-            super.onBackPressed();
+      
+            Toast.makeText(this, "No need to request permission on older Android versions", Toast.LENGTH_SHORT).show()
         }
     }
-    
-    private void openUrl() {
-        String githubUrl = "https://github.com/Zyron-Official/Asset-Studio";
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(githubUrl));
-        startActivity(intent);
+
+    private fun navigationDrawer() {
+        navigationView.bringToFront()
+        navigationView.setCheckedItem(R.id.navigation_home)
+        navigationView.setNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> closeDrawerWithDelay()
+                R.id.navigation_shapeshifter -> startActivityWithDelay(ShapeShifterActivity::class.java)
+                R.id.navigation_preferences -> startActivityWithDelay(PreferencesActivity::class.java)
+                R.id.navigation_xmldesigner -> startActivityWithDelay(XMLDesignerActivity::class.java)
+                R.id.navigation_faq -> startActivityWithDelay(FaqActivity::class.java)
+                R.id.navigation_updates -> openUrl()
+                R.id.navigation_share -> shareApp()
+            }
+            true
+        }
     }
 
-    private void shareApp() {
-        String appName = getString(R.string.app_name);
-        String appLink = "https://github.com/Zyron-Official/Asset-Studio";
-        String appDescription = getString(R.string.app_name);
-        String shareInfo = appName + " " + appLink + " " + appDescription;
+    private fun closeDrawerWithDelay() {
+        activityMain.postDelayed({
+            activityMain.closeDrawer(GravityCompat.START)
+        }, 230)
+    }
 
-        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, shareInfo);
+    private fun startActivityWithDelay(activityClass: Class<*>) {
+        activityMain.closeDrawer(GravityCompat.START)
+        activityMain.postDelayed({
+            startActivity(Intent(this, activityClass))
+        }, 230)
+    }
 
-        int appIconResource = getApplicationInfo().icon;
+    private fun animateNavigationDrawer() {
+        activityMain.addDrawerListener(object : DrawerLayout.SimpleDrawerListener() {
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
+                val diffScaledOffset = slideOffset * (1 - END_SCALE)
+                val offsetScale = 1 - diffScaledOffset
 
-        Intent chooser = Intent.createChooser(shareIntent, shareInfo);
-        PackageManager packageManager = getPackageManager();
+                layoutMain.scaleX = offsetScale
+                layoutMain.scaleY = offsetScale
+
+                val xOffset = drawerView.width * slideOffset
+                val xOffsetDiff = drawerView.width * diffScaledOffset / 1.5f
+                val xTranslation = xOffset - xOffsetDiff
+                layoutMain.translationX = xTranslation
+            }
+        })
+    }
+
+    override fun onBackPressed() {
+        if (activityMain.isDrawerOpen(GravityCompat.START)) {
+            activityMain.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+    private fun openUrl() {
+        val githubUrl = "https://github.com/Zyron-Official/Asset-Studio"
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(githubUrl)))
+    }
+
+    private fun shareApp() {
+        val appName = getString(R.string.app_name)
+        val appLink = "https://github.com/Zyron-Official/Asset-Studio"
+        val appDescription = getString(R.string.app_name)
+        val shareInfo = "$appName $appLink $appDescription"
+
+        val shareIntent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, shareInfo)
+        }
+
+        val chooser = Intent.createChooser(shareIntent, shareInfo)
         if (chooser.resolveActivity(packageManager) != null) {
-            
-        startActivity(chooser);
+            startActivity(chooser)
         }
     }
 }
