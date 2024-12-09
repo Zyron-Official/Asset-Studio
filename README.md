@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/Zyron-Official/Asset-Studio.svg)](https://github.com/Zyron-Official/Asset-Studio/issues)
 [![GitHub stars](https://img.shields.io/github/stars/Zyron-Official/Asset-Studio.svg)](https://github.com/Zyron-Official/Asset-Studio/stargazers)
-[![GitHub Workflow Status](https://github.com/Zyron-Official/Asset-Studio/actions/workflows/main.yml/badge.svg)](https://github.com/Zyron-Official/Asset-Studio/actions)
+[![GitHub Workflow Status](https://github.com/Zyron-Official/Asset-Studio/actions/workflows/android-ci.yml/badge.svg)](https://github.com/Zyron-Official/Asset-Studio/actions)
 [![codecov](https://codecov.io/gh/Zyron-Official/Asset-Studio/branch/main/graph/badge.svg?token=YOUR_CODECOV_TOKEN)](https://codecov.io/gh/Zyron-Official/Asset-Studio)
 
 <br>
