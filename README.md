@@ -9,16 +9,21 @@
 
 <br>
 
-Asset Studio is a powerful and efficient mobile application designed to simplify the creation of high-quality app assets.  It streamlines the workflow for generating various assets in diverse sizes and resolutions, ensuring visual consistency across all platforms.
+Asset Studio is a powerful and efficient mobile application designed to simplify the creation of high-quality app assets. It streamlines the workflow for generating various assets in diverse sizes and resolutions, ensuring visual consistency across all platforms.
 
 ## Key Features
 
+Asset Studio offers a comprehensive suite of tools to handle all your asset creation needs:
+
 * **High-Fidelity Asset Generation:** Produce optimized assets for various screen densities and aspect ratios, guaranteeing a polished user experience on all devices.
-* **Comprehensive Asset Types:** Create app icons, launcher icons, splash screens, notification icons, and more.  Support for additional asset types will be added in future releases.
-* **Advanced Customization:** Fine-tune your assets with customizable parameters like background colors, shapes, text styles, and more.
-* **Batch Processing & Export:** Generate multiple assets simultaneously and export them in various formats (PNG, JPG, SVG, WebP) ready for immediate integration.
-* **Cross-Platform Compatibility:**  Seamlessly integrates with iOS and Android development workflows.
-* **Regular Updates:**  We maintain active development, ensuring compatibility with the latest platform guidelines and incorporating community feedback.
+* **Launcher Icon Generation:** Effortlessly create adaptive and legacy launcher icons adhering to platform guidelines, ensuring your app looks great on all devices.
+* **XML Designer:**  Design and edit XML files directly within the app, providing precise control over your app's resources.
+* **ShapeShifter:**  Easily transform and manipulate your images into various shapes and styles, adding unique visual flair to your assets.
+* **Animator:** Create captivating animations for your app icons and other assets, enhancing user engagement.
+* **Converter:**  Seamlessly convert images between different formats (PNG, JPG, SVG, WebP) and optimize them for mobile devices.
+* **Batch Processing & Export:** Generate multiple assets simultaneously and export them in various formats, ready for immediate integration.
+* **Cross-Platform Compatibility:** Seamlessly integrates with iOS and Android development workflows.
+* **Regular Updates:** We maintain active development, ensuring compatibility with the latest platform guidelines and incorporating community feedback.
 
 
 ## Architecture & Technology
