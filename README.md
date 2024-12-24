@@ -1,4 +1,4 @@
-# Asset Studio: Your Mobile Asset Creation Companion
+# Asset Studio: Mobile Asset Creation Companion
 
 ![banner.png](banner.png)
 
