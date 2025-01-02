@@ -4,7 +4,7 @@
 
 <br>
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache-blue.svg)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/YOUR_GITHUB_USERNAME/Asset-Studio.svg)](https://github.com/YOUR_GITHUB_USERNAME/Asset-Studio/issues)
 [![GitHub stars](https://img.shields.io/github/stars/YOUR_GITHUB_USERNAME/Asset-Studio.svg)](https://github.com/YOUR_GITHUB_USERNAME/Asset-Studio/stargazers)
 [![GitHub Workflow Status](https://github.com/YOUR_GITHUB_USERNAME/Asset-Studio/actions/workflows/main.yml/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/Asset-Studio/actions)
